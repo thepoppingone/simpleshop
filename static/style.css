@@ -264,17 +264,17 @@ button.button.light {
 
 .stripe .storefront .product .info .image {
   border: 1px solid #d8d8d8;
-  height: 128px;
-  width: 128px;
+  height: 200px;
+  width: 200px;
   background-position: 50% 50%;
   background-size: contain;
   background-repeat: no-repeat;
-  margin: 10px auto;
+  margin: 20px auto;
 }
 
 .stripe .storefront .product .info .description {
   font-size: 14px;
-  padding: 20px;
+  padding: 5px 20px;
 }
 
 .stripe .storefront .product .info .price {}
