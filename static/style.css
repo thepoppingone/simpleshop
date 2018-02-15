@@ -98,6 +98,7 @@ button.button.light {
 
 .stripe .modal {
   position: fixed;
+  z-index: 100;
   display: none;
   background-color: rgba(32, 32, 32, 0.6);
   width: 100%;
