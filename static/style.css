@@ -79,6 +79,15 @@ button.button.light {
   opacity: 1;
 }
 
+.stripe a.blue {
+  color: #1EAEDB;
+  opacity: 0.8;
+}
+
+.stripe a.blue:hover {
+  opacity: 1;
+}
+
 .stripe .modal {
   position: fixed;
   display: none;

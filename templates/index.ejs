@@ -1,7 +1,8 @@
 <!DOCTYPE HTML>
 <html>
+  <meta name="viewport" content="initial-scale=1.0">
   <head>
-    <title>My Stripe x StdLib "Serverless" Store</title>
+    <title>Stripe Simple Pay</title>
     <link href="./static/style.css" rel="stylesheet">
     <script src="./static/lib.js"></script>
     <script src="./static/script.js"></script>
@@ -24,40 +25,47 @@
   <body>
     <div class="stripe">
       <%- include('dialog') %>
-      <div class="nav">
-        <div class="about">
-          <div class="title">
-            Payment Page
+      <div class="container" style="padding-bottom:150px">
+        <div class="row">
+          <div class="one-half column" style="margin-top: 25%">
+            <h1>Hello.</h1>
+            <h4>Welcome to Simple Pay</h4>
+            <p>This is a webpage I built to collect digital payments for my Carousell listings. <a class="blue" href="https://carousell.com/wangpp/">View my listings here</a>.</p>
           </div>
-          <div class="description">
+          <div class="one-half column" style="margin-top: 15%">
+            <div class="storefront">
+              <% if (error) { %>
+                <div class="error">
+                  An error was encountered:<br><br>
+                  <%- error %>
+                </div>
+              <% } else if (!products.length) { %>
+                <div class="error">
+                  It doesn't look like you have any products set up.<br><br>
+                  <a href="https://dashboard.stripe.com/test/products" target="_blank">Click here</a>
+                  to add some to your test environment.<br>
+                  If this is meant for production,
+                  <a href="https://dashboard.stripe.com/products" target="_blank">click here</a> instead.
+                </div>
+              <% } else { %>
+                <% products.forEach(function(product) { %>
+                  <%- include('product', {product: product}); %>
+                <% }); %>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      </div>
+          <!-- <div class="title">
+            Payment Page
+          </div> -->
+          <!-- <div class="description">
             Welcome to your Stripe Storefront, brought to you by StdLib.<br>
             The first fully-configurable, developer-first, "serverless" online
             retail resource.<br><br>
             To get started, you can edit this title and description
             in <code>./static/components/index.ejs</code> &mdash; have fun!
-          </div>
-        </div>
-      </div>
-      <div class="storefront">
-        <% if (error) { %>
-          <div class="error">
-            An error was encountered:<br><br>
-            <%- error %>
-          </div>
-        <% } else if (!products.length) { %>
-          <div class="error">
-            It doesn't look like you have any products set up.<br><br>
-            <a href="https://dashboard.stripe.com/test/products" target="_blank">Click here</a>
-            to add some to your test environment.<br>
-            If this is meant for production,
-            <a href="https://dashboard.stripe.com/products" target="_blank">click here</a> instead.
-          </div>
-        <% } else { %>
-          <% products.forEach(function(product) { %>
-            <%- include('product', {product: product}); %>
-          <% }); %>
-        <% } %>
-      </div>
+          </div> -->
       <div class="end">
         <div class="by">
           This store is powered by <a href="https://stripe.com/" target="_blank">Stripe</a> and
