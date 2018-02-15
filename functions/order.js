@@ -11,7 +11,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 module.exports = (skuId, stripeToken, shippingInfo = null, context, callback) => {
 
   let order = {
-    currency: 'usd',
+    currency: 'sgd',
     items: [
       {
         type: 'sku',
