@@ -1,3 +1,6 @@
+# One off template to use Stripe as a service
+Currently it does nothing if a Stripe account is not linked.
+
 # Your "Serverless" Stripe Store with StdLib
 
 Welcome to your new "serverless" Stripe store using StdLib!
